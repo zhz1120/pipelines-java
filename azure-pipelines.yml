@@ -35,4 +35,7 @@ jobs:
     displayName: 'Retain Build'
     env:
       System.AccessToken: $(System.AccessToken)
-
+  
+  - script: |
+      echo ##vso[build.addbuildtag]MyTag
+    displayName: 'Add Tag to Build'
