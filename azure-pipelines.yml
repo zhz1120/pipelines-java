@@ -41,12 +41,11 @@ jobs:
       $buildId = "$(Build.BuildId)"
       $projectId = "$(System.TeamProjectId)"
       $organizationUrl = "$(System.CollectionUri)"
-      $tagName = "v1.0.$(Build.BuildId)"
 
-      $uri = "$($organizationUrl)$($projectId)/_apis/build/builds/$($buildId)/tags?api-version=6.0"
+      $uri = "$($organizationUrl)$($projectId)/_apis/build/builds/$($buildId)/tags?api-version=7.1-preview.3"
       
       $body = @{
-        "tags" = @($tagName)
+        "Test"
       } | ConvertTo-Json
       
       $headers = @{
