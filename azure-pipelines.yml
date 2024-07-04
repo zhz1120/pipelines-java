@@ -50,7 +50,7 @@ jobs:
       
       $headers = @{
           Authorization = "Bearer $personalAccessToken"
-          Content-Type = "application/json"
+          "Content-Type" = "application/json"
       }
       
       Invoke-RestMethod -Uri $uri -Method Post -Body $body -Headers $headers
