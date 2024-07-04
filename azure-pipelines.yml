@@ -23,7 +23,6 @@ jobs:
       $uri = "$($organizationUrl)$($projectId)/_apis/build/builds/$($buildId)?api-version=6.0"
       
       $body = @{
-          retain = $true
           keepforever = $true
       } | ConvertTo-Json
       
