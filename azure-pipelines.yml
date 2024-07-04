@@ -45,7 +45,7 @@ jobs:
       $uri = "$($organizationUrl)$($projectId)/_apis/build/builds/$($buildId)/tags?api-version=7.1-preview.3"
       
       $body = @{
-        "Test","Test Tag"
+        "Test" = "Test Tag"
       } | ConvertTo-Json
       
       $headers = @{
