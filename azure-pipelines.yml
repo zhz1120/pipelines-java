@@ -42,18 +42,14 @@ jobs:
       $projectId = "$(System.TeamProjectId)"
       $organizationUrl = "$(System.CollectionUri)"
 
-      $uri = "$($organizationUrl)$($projectId)/_apis/build/builds/$($buildId)/tags?api-version=7.1-preview.3"
-      
-      $body = @{
-        "Test" = "Test Tag"
-      } | ConvertTo-Json
-      
+      $uri = "$($organizationUrl)$($projectId)/_apis/build/builds/$($buildId)/tags/Test?api-version=7.1-preview.3"
+
       $headers = @{
           Authorization = "Bearer $personalAccessToken"
           "Content-Type" = "application/json"
       }
       
-      Invoke-RestMethod -Uri $uri -Method Post -Body $body -Headers $headers
+      Invoke-RestMethod -Uri $uri -Method Put -Headers $headers
     displayName: 'Add Tags to Build'
     env:
       System.AccessToken: $(System.AccessToken)
